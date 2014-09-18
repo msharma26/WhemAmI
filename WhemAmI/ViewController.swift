@@ -21,13 +21,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func findMyLocation(sender: AnyObject) {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: {(placemarks, error)->Void in
             
-            if error {
+            if (error != nil) {
                 println("Reverse geocoder failed with error" + error.localizedDescription)
                 return
             }
@@ -41,14 +42,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         })
     }
     
-    func displayLocationInfo(placemark: CLPlacemark) {
-        if placemark != nil {
+    func displayLocationInfo(placemark: CLPlacemark?) {
+        if let containsPlacemark = placemark {
             //stop updating location to save battery life
             locationManager.stopUpdatingLocation()
-            println(placemark.locality ? placemark.locality : "")
-            println(placemark.postalCode ? placemark.postalCode : "")
-            println(placemark.administrativeArea ? placemark.administrativeArea : "")
-            println(placemark.country ? placemark.country : "")
+            let locality = (containsPlacemark.locality != nil) ? containsPlacemark.locality : ""
+            let postalCode = (containsPlacemark.postalCode != nil) ? containsPlacemark.postalCode : ""
+            let administrativeArea = (containsPlacemark.administrativeArea != nil) ? containsPlacemark.administrativeArea : ""
+            let country = (containsPlacemark.country != nil) ? containsPlacemark.country : ""
+            println(locality)
+            println(postalCode)
+            println(administrativeArea)
+            println(country)
         }
 
     }
