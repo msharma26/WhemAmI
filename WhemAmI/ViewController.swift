@@ -11,6 +11,11 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
+    @IBOutlet var localityTxtField: UITextField!
+    @IBOutlet var postalCodeTxtField: UITextField!
+    @IBOutlet var aAreaTxtField: UITextField!
+    @IBOutlet var countryTxtField: UITextField!
+    
     let locationManager = CLLocationManager()
                             
     override func viewDidLoad() {
@@ -50,10 +55,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             let postalCode = (containsPlacemark.postalCode != nil) ? containsPlacemark.postalCode : ""
             let administrativeArea = (containsPlacemark.administrativeArea != nil) ? containsPlacemark.administrativeArea : ""
             let country = (containsPlacemark.country != nil) ? containsPlacemark.country : ""
-            println(locality)
-            println(postalCode)
-            println(administrativeArea)
-            println(country)
+            
+            localityTxtField.text = locality
+            postalCodeTxtField.text = postalCode
+            aAreaTxtField.text = administrativeArea
+            countryTxtField.text = country
         }
 
     }
