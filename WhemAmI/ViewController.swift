@@ -21,6 +21,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
     }
     
     @IBAction func findMyLocation(_ sender: AnyObject) {
@@ -28,6 +29,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
     }
     
     private func locationManager(_ manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {

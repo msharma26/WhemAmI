@@ -13,6 +13,7 @@
 		48D26E5D1982771700FA2345 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48D26E5C1982771700FA2345 /* Images.xcassets */; };
 		48D26E691982771700FA2345 /* WhemAmITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D26E681982771700FA2345 /* WhemAmITests.swift */; };
 		48D26E7319827B7700FA2345 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48D26E7219827B7700FA2345 /* CoreLocation.framework */; };
+		99B1DD081DAC6FBD00FAD36C /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B1DD071DAC6FBD00FAD36C /* Launch.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		48D26E671982771700FA2345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48D26E681982771700FA2345 /* WhemAmITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhemAmITests.swift; sourceTree = "<group>"; };
 		48D26E7219827B7700FA2345 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		99B1DD071DAC6FBD00FAD36C /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				48D26E591982771700FA2345 /* Main.storyboard */,
 				48D26E5C1982771700FA2345 /* Images.xcassets */,
 				48D26E531982771700FA2345 /* Supporting Files */,
+				99B1DD071DAC6FBD00FAD36C /* Launch.storyboard */,
 			);
 			path = WhemAmI;
 			sourceTree = "<group>";
@@ -162,7 +165,13 @@
 				TargetAttributes = {
 					48D26E4F1982771700FA2345 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 92Y977ZMXE;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					48D26E611982771700FA2345 = {
 						CreatedOnToolsVersion = 6.0;
@@ -197,6 +206,7 @@
 			files = (
 				48D26E5B1982771700FA2345 /* Main.storyboard in Resources */,
 				48D26E5D1982771700FA2345 /* Images.xcassets in Resources */,
+				99B1DD081DAC6FBD00FAD36C /* Launch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,11 +340,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 92Y977ZMXE;
 				INFOPLIST_FILE = WhemAmI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -342,11 +353,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 92Y977ZMXE;
 				INFOPLIST_FILE = WhemAmI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
